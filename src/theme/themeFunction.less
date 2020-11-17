@@ -1,0 +1,46 @@
+.theme(@themeColor, @themeColorHover, @themeColorActive, @themeColorDisable) {
+  .theme_font_color {
+    color: @themeColor;
+  }
+
+  .custom_btn_plain {
+    &.el-button {
+      border-color: @themeColor !important;
+      color: @themeColor;
+      &:hover {
+        border-color: @themeColorHover !important;
+        background: @themeColorHover !important;
+        color: #ffffff;
+      }
+      &:active {
+        border-color: @themeColorActive !important;
+        background: @themeColorActive !important;
+        color: #ffffff;
+      }
+    }
+    &.is-disabled,
+    &.is-disabled:hover,
+    &.is-disabled:active {
+      border-color: @themeColorDisable !important;
+      background: @themeColorDisable !important;
+    }
+  }
+
+  .custom_btn {
+    &.el-button {
+      background: @themeColor !important;
+      color: #ffffff;
+      &:hover {
+        background: @themeColorHover !important;
+      }
+      &:active {
+        background: @themeColorActive !important;
+      }
+    }
+    &.is-disabled,
+    &.is-disabled:hover,
+    &.is-disabled:active {
+      background: @themeColorDisable !important;
+    }
+  }
+}
