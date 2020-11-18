@@ -3,8 +3,14 @@
     <div class="current_theme">
       <span>当前主题色</span><span class="theme_font_color">{{ theme }}</span>
     </div>
-    <el-button class="custom_btn_plain" @click="change">切换主题</el-button>
-    <el-button class="custom_btn" disabled>按钮</el-button>
+    <div class="btn_wrapper">
+      <el-button class="custom_btn_plain">按钮</el-button>
+      <el-button class="custom_btn" disabled>按钮</el-button>
+    </div>
+    <el-radio-group v-model="radio" @change="change">
+      <el-radio label="red">红色主题</el-radio>
+      <el-radio label="blue">蓝色主题</el-radio>
+    </el-radio-group>
   </div>
 </template>
 
@@ -14,7 +20,8 @@ export default {
   name: 'Home',
   data () {
     return {
-      input: ''
+      input: '',
+      radio: 'blue'
     }
   },
   computed: {
@@ -31,10 +38,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .home {
-    text-align: center;
-    .current_theme {
-      margin-bottom: 20px;
-    }
+.home {
+  text-align: center;
+  .current_theme,
+  .btn_wrapper {
+    margin-bottom: 20px;
   }
+}
 </style>

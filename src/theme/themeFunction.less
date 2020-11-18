@@ -1,21 +1,21 @@
-.theme(@themeColor, @themeColorHover, @themeColorActive, @themeColorDisable) {
+.themeFn(@themeColor, @themeColorHover, @themeColorActive, @themeColorDisable) {
   .theme_font_color {
-    color: @themeColor;
+    color: @themeColor !important;
   }
 
   .custom_btn_plain {
     &.el-button {
       border-color: @themeColor !important;
-      color: @themeColor;
+      color: @themeColor !important;
       &:hover {
         border-color: @themeColorHover !important;
         background: @themeColorHover !important;
-        color: #ffffff;
+        color: #ffffff !important;
       }
       &:active {
         border-color: @themeColorActive !important;
         background: @themeColorActive !important;
-        color: #ffffff;
+        color: #ffffff !important;
       }
     }
     &.is-disabled,
@@ -28,8 +28,9 @@
 
   .custom_btn {
     &.el-button {
+      border-color: @themeColor !important;
       background: @themeColor !important;
-      color: #ffffff;
+      color: #ffffff !important;
       &:hover {
         background: @themeColorHover !important;
       }
@@ -40,7 +41,25 @@
     &.is-disabled,
     &.is-disabled:hover,
     &.is-disabled:active {
+      border-color: @themeColorDisable !important;
       background: @themeColorDisable !important;
+    }
+  }
+
+  .el-radio {
+    /deep/.el-radio__inner {
+      &:hover {
+        border-color: @themeColor !important;
+      }
+    }
+    &.is-checked {
+      /deep/.el-radio__inner {
+        background-color: @themeColor !important;
+        border-color: @themeColor !important;
+      }
+      /deep/.el-radio__label {
+        color: @themeColor !important;
+      }
     }
   }
 }
